@@ -1,1 +1,177 @@
-/* Add CSS styling here */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #8DE4FF;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+
+}
+
+nav {
+    display: flex;
+    justify-content:space-around;
+    align-items: baseline;
+    padding-left: 4%;
+    padding-bottom: 4%;
+    padding-right: 2%;
+}
+
+h1 {
+    text-align:justify;
+    font-size: 7vh;
+    text-shadow: 3px 3px #033F63;
+    color: #89CE94;
+    padding-top: 3%;
+    padding-right: 5%;
+}
+
+
+.top {
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../mypagephotos/yosemite.jpg");
+    margin-bottom: 5%;
+  }
+
+.content-wrapper {
+    display: flex;
+}
+
+h2 {
+    text-align: center;
+    font-size: 4rem;
+    color: #59A96A;
+    text-decoration: none;
+    text-shadow: 3px 3px black;
+}
+
+.top p {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #89CE94;
+    text-shadow: 3px 3px  #033F63;
+}
+
+.top p:hover{
+    color: #f356d1;
+    transition: .3s;
+    transform: scale(1.2);
+    text-shadow: 2px 2px #89CE94;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1%;
+    padding-top: 4%;
+    text-shadow: 3px 3px #483D03;
+}
+.row p {
+    font-size: 2em;
+    text-align: center;
+    color: #B3EFB2;
+}
+
+.row p:hover {
+    color: #f356d1;
+    transition: .3s;
+    transform: scale(1.2);
+    text-shadow: 2px 2px #89CE94;
+}
+
+button {
+    background-color: #B1CC74;
+    color: #FCF6BD;
+    border: #483D03 solid 3px;
+    height: 40px;
+    width: 130px;
+    /* border-radius: 18%; */
+    /* text-shadow: 2px 2px #8DE4FF ; */
+    font-size: .9em;
+    
+}
+
+button:hover{
+    background-color: #E4C1F9;
+    color: white;
+    border: white solid 1px;
+    transition: .3s;
+    transform: scale(1.3);
+}
+
+button a{
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.2rem;
+    color: paleturquoise;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    padding: 20px;
+  }
+
+footer {
+    background-color: #033F63;
+    padding: 30px;
+    text-align: center;
+    font-size: 1rem;
+  }
