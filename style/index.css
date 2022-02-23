@@ -120,7 +120,7 @@ h2 {
     color: #f356d1;
     transition: .5s;
     transform: scale(1.2);
-    text-shadow: 2px 2px #89CE94;
+    text-shadow: 2px 2px white;
 }
 
 .row {
@@ -141,7 +141,7 @@ h2 {
     color: #f356d1;
     transition: .3s;
     transform: scale(1.2);
-    text-shadow: 2px 2px #89CE94;
+    text-shadow: 2px 2px white;
 }
 
 button {
