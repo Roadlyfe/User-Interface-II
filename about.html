@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdamSmithEtc</title>
-    <!-- <link rel="stylesheet" href="style/index.css"/> -->
+    <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +14,7 @@
         <div class="main">
             <button class="btn"><a href="index.html">Home ⚡</a></button>
             <button class="btn"><a href="projects.html">Projects ⛺</a></button>
-            <button class="btn"><a href="contact.html">Contact Me! 👋🏼</a></button>
+            <!-- <button class="btn"><a href="contact.html">Contact Me! 👋🏼</a></button> -->
             <button class="btn"><a href="drawme.html">Let's Draw! 🎨 </a></button>
           </div>
     </nav>
@@ -325,5 +325,21 @@ footer {
     
   } /* closing media bracket */
 </style>
+<script>
+ const pressed = [];
+const secretCode = 'roadlyfe';
+
+window.addEventListener('keyup', (e) => {
+  console.log(e.key);
+  pressed.push(e.key);
+  pressed.splice(-secretCode.length -1, pressed.length - secretCode.length);
+  if (pressed.join('').includes(secretCode)) {
+    console.log('DING DING!');
+    cornify_add();
+  }
+  console.log(pressed);
+});
+
+</script>
 </body>
 </html>
