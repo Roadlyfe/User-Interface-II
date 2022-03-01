@@ -4,72 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdamSmithEtc</title>
-    <link rel="stylesheet" href="style/index.css"/>
+    <!-- <link rel="stylesheet" href="style/index.css"/> -->
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+    <style>
+        *{
+            box-sizing: border-box;
+            width: 100%;
+            margin: 0;
+            padding: 1% 1% 1% 1%; 
+            height: 100vh;
+            box-shadow: inset 0 0 0 1000px rgba(0, 255, 128, 0.03);
+        }
+
+        header {
+            font-size: 4em;
+            letter-spacing: 20px;
+            font-family: 'Creepster', cursive;
+            color: aqua;
+            /* box-shadow: inset 0 0 0 1000px rgba(0, 255, 128, 0.03);  */
+            height: 1vh;   
+            }
+
+        ::selection {
+            color: none;
+            background: none;
+        }
+
+    </style>
     <header>
-    <nav>
-        <h1> Adam Xavier Smith</h1>
-        <div class="main">
-            <button class="btn"><a href="about.html">About 🏠</a></button>
-            <button class="btn"><a href="projects.html">Projects ⛺</a></button>
-            <button class="btn"><a href="contact.html">Contact Me! 👋🏼</a></button>
-          </div>
-        
-        <!-- <button><a href="about.html">About 🏠</a></button>
-        <button><a href="projects.html">Projects ⛺</a></button>
-        <button><a href="contact.html">Contact Me! 👋🏼</a></button>
-         -->
-    </nav>
-</header>
-<section class="top">
-    <div class="content-wrapper">
-        <div class="text-wrapper">
-            
-            <p>Software Developer with An Interest In FrontEnd Work.</p>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="row">
-        <div class="gallery-image">
-            <img src="images/bluehorizon.png"/>
-            <p>This</p>
-        </div>
-        <div class="gallery-image">
-            <img src="images/fairyDust.png"/>
-            <p>Is</p>
-        </div>
-        <div class="gallery-image">
-            <img src="images/oceanrockoregon.png"/>
-            <p>Where</p>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="row">
-        <div class="gallery-image">
-            <img src="images/riverfallcanada.png"/>
-            <p>Project</p>
-        </div>
-        <div class="gallery-image">
-            <img src="images/sunsetbigsur.png"/>
-            <p>Titles</p>
-        </div>
-        <div class="gallery-image">
-            <img src="images/sunsettreecolorado.png"/>
-            <p>Live</p>
-        </div>
-    </div>
-</section>
-<footer>
-    
-    <button class="btn"><a href="contact.html">Contact Me</a></button>
-    <button class="btn"><a href="https://roadlyfe.com/">Roadlyfe 📸</a></button>
-    <button class="btn"><a href="https://www.linkedin.com/in/adam-smith-218226110/">Linkedin 💥</a></button>
-      <p>&copy Adam Smith 2022</br></br>
-      All Photography &copy Adam Smith 2022</p>
-</footer>
+        <h1>Draw on me</h1>
+      </header>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+  const canvas = document.querySelector('#draw');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+ctx.strokeStyle = '#BADA55';
+ctx.lineJoin ='round';
+ctx.lineCap ='round';
+ctx.lineWidth = 100;
+// ctx.globalCompositeOperation = 'lighten';
+
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+let hue = 0;
+let direction = true;
+
+
+function draw(e){
+  if (!isDrawing) return;
+  console.log(e);
+  ctx.strokeStyle = `hsl(${hue}, 100% , 50%)`;
+
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+  hue++;
+  if (hue >= 360) {
+    hue = 0;
+  }
+  if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+    direction = !direction;
+  }
+  if (direction) {
+    ctx.lineWidth++;
+  } else {
+    ctx.lineWidth--;
+  }
+
+}
+
+
+canvas.addEventListener('mousedown', (e) => {
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+
+
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false);
+
+</script>
+
+<style>
+  html, body {
+    margin: 0;
+  }
+</style>
+
 </body>
 </html>
