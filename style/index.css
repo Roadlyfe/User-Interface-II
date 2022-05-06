@@ -47,17 +47,20 @@ table {
 	border-spacing: 0;
 }
 
-* {
+/* * {
     box-sizing: border-box;
-}
+} */
+
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
 body {
-    background-color: #8DE4FF;
+    background-color: #FFFBFA;
     font-family: 'Roboto', sans-serif;
-}
-
-header {
-
 }
 
 nav {
@@ -71,18 +74,68 @@ nav {
 
 h1 {
     text-align:justify;
-    font-size: 7vh;
-    text-shadow: 3px 3px #033F63;
-    color: #89CE94;
+    font-size: 4rem;
+    text-shadow: 5px 5px #54DEFD;
+    color: #037171;
     padding-top: 3%;
     padding-right: 5%;
 }
 
 h1:hover {
-    color: #FF6F59;
-    text-shadow: 3.5px 3.5px #DB504A;
-    transition: .3s;
-    transform: scale(1.1);
+    font-family: 'Creepster', cursive;
+    transition: .1s; 
+    transform: scale(1.3);
+    color: orangered;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+/* From cssbuttons.io by @gksckt */
+
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+   }
+   
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+   .btn {
+    width: 170px;
+    height: 60px;
+    font-size: 18px;
+    background: #54DEFD;
+    border: none;
+    border-radius: 50px;
+    color: rgb(250, 249, 249);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    }
+   
+   .btn:hover {
+    box-shadow: inset 0 0 0 4px #ef476f, 
+                 inset 0 0 0 8px #ffd166, 
+                 inset 0 0 0 12px #06d6a0,
+                 inset 0 0 0 16px #118ab2;
+    background: #d9fadb;
+    color: rgb(5, 0, 0);
+   }
+   .btn a:hover {
+    text-decoration: none;
+    color: rgb(2, 0, 0);
 }
 
 .top {
@@ -93,10 +146,10 @@ h1:hover {
     height: 700px;
     justify-content: center;
     align-items: center;
-    background-image: url("../mypagephotos/yosemite.jpg");
+    background-image: url("../images/cabindreams.png");
     margin-bottom: 5%;
   }
-
+  
 .content-wrapper {
     display: flex;
 }
@@ -112,7 +165,7 @@ h2 {
 .top p {
     text-align: center;
     font-size: 2.2rem;
-    color: #89CE94;
+    color: #54DEFD;
     text-shadow: 3px 3px  #033F63;
 }
 
@@ -123,48 +176,43 @@ h2 {
     text-shadow: 2px 2px white;
 }
 
+
 .row {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 1%;
+    padding: 20px;
     padding-top: 4%;
-    text-shadow: 3px 3px #483D03;
+  }
+
+.gallery-img { 
+    width: 100%;
 }
+
+.gallery-image {
+    text-align: center;
+    width: 28%;
+  }
+
+  .gallery-image img:hover {
+    color: white;
+    border: white outset 5px;
+    transition: 0.3s;
+    transform: scale(0.9);
+  }
+
 .row p {
     font-size: 2em;
     text-align: center;
-    color: #B3EFB2;
+    color: #54DEFD;
 }
 
 .row p:hover {
     color: #f356d1;
     transition: .3s;
-    transform: scale(1.2);
-    text-shadow: 2px 2px white;
-}
-
-button {
-    background-color: #B1CC74;
-    color: #FCF6BD;
-    border: #483D03 solid 3px;
-    height: 40px;
-    width: 130px;
-    font-size: .9em;
-    
-}
-
-button:hover{
-    background-color: #E4C1F9;
-    color: white;
-    border: white solid 1px;
-    transition: .2s;
-    transform: scale(1.3);
-    border-radius: 80%;
-}
-
-button a{
-    text-decoration: none;
+    transform: scale(1.25);
+    text-shadow: 3px 3px #54DEFD;
 }
 
 p {
@@ -180,3 +228,100 @@ footer {
     text-align: center;
     font-size: 1rem;
   }
+
+  footer p {
+    font-family: 'Press Start 2P', cursive;
+    color: #FF9F1C;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 800px) {
+
+    h1 {
+        text-align:center;
+        font-size: 4rem;
+        text-shadow: 3px 3px #54DEFD;
+        color: #037171;
+        padding-top: 5%;
+        padding-left: 5%;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+    .top {
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/cabindreams.png");
+    }
+    
+    .top p {
+    font-size: 2rem;
+    }
+
+  .top p:hover{
+    color: #f356d1;
+    transition: .5s;
+    transform: scale(1);
+    text-shadow: 2px 2px white;
+}
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction:column;
+    justify-content: space-around;
+  }
+  
+  .gallery-image img {
+    width: 100%;
+  }
+
+  .gallery-image {
+    text-align: center;
+    width: 100%;
+  }
+
+  
+ footer p{
+    font-size: .9rem;
+ }
+  } /* closing media bracket */
+  
+  
+  @media (max-width: 500px) {
+  
+    h1 {
+        text-align:center;
+        font-size: 4rem;
+        text-shadow: 3px 3px #54DEFD;
+        color: #037171;
+        padding-top: 3%;
+        padding-right: 5%;
+    }
+      
+  
+  .top {
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/cabindreams.png");
+  }
+  
+  footer p{
+    font-size: .7rem;
+ }
+    
+  } /* closing media bracket */
